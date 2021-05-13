@@ -1,0 +1,14 @@
+This is an explanation of the SQL DB and each type of data (what shall be used for)...
+
+Email (This will be the primary key)
+Password (do I need to explain?)
+Name (Employer name)
+Roll (The roll, of the person under the foundation)
+Level (Access Level)
+Group (The group that the person belongs (if it is the case)) Ex: Gamers against weed
+SITE-AREA (Current SITE/AREA from which the user works...)
+CAssignment (Current Assignmenr (Constantly changing))
+Profile (Description)
+History (Articles seen)
+SCPID (SCP Discoveries)
+DocumentsID (Other documents not related to SCP's)
