@@ -185,6 +185,16 @@ namespace SCP
             button3.BackColor = Color.White;
             button3.ForeColor = Color.Black;
             this.Refresh();
+
+            loadingopener();
+
+            WaA.Visible = true;
+            descwaa.Size = new Size(WaA.Size.Width - 30, WaA.Size.Height / 2);
+            confwaa.Location = new Point(WaA.Size.Width - confwaa.Size.Width - 10, WaA.Size.Height - confwaa.Size.Height - 10);
+
+            DataTable dt = new DataTable();
+            dt = BLL.Employees.queryEmployee(impclass);
+
             button3.BackColor = Color.Black;
             button3.ForeColor = Color.White;
         }
@@ -512,6 +522,22 @@ namespace SCP
                 impclass imp = new impclass();
                 imp.getError(ee);
             }
+        }
+
+        private void Type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Type.Text != "")
+                confwaa.Enabled = true;
+            else
+                confwaa.Enabled = false;
+        }
+
+        private void confwaa_Click(object sender, EventArgs e)
+        {
+            confwaa.BackColor = Color.White;
+            confwaa.ForeColor = Color.Black;
+
+            loadingopener();
         }
     }
 }
