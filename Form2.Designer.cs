@@ -44,6 +44,8 @@ namespace SCP
             this.Usernamecont = new System.Windows.Forms.Label();
             this.panelmenu = new System.Windows.Forms.Panel();
             this.WaA = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.Type = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.confwaa = new System.Windows.Forms.Button();
@@ -93,8 +95,6 @@ namespace SCP
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilepic)).BeginInit();
@@ -331,6 +331,31 @@ namespace SCP
             this.WaA.TabIndex = 24;
             this.WaA.Visible = false;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox2.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "SCP",
+            "Tale/other"});
+            this.comboBox2.Location = new System.Drawing.Point(111, 54);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(147, 29);
+            this.comboBox2.TabIndex = 27;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(15, 54);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 25);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Site-Area";
+            // 
             // Type
             // 
             this.Type.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
@@ -366,13 +391,15 @@ namespace SCP
             this.confwaa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confwaa.Font = new System.Drawing.Font("Nirmala UI", 15.75F);
             this.confwaa.ForeColor = System.Drawing.Color.White;
-            this.confwaa.Location = new System.Drawing.Point(230, 236);
+            this.confwaa.Location = new System.Drawing.Point(102, 199);
             this.confwaa.Name = "confwaa";
             this.confwaa.Size = new System.Drawing.Size(105, 50);
             this.confwaa.TabIndex = 23;
             this.confwaa.Text = "Confirm";
             this.confwaa.UseVisualStyleBackColor = false;
             this.confwaa.Click += new System.EventHandler(this.confwaa_Click);
+            this.confwaa.MouseEnter += new System.EventHandler(this.confwaa_MouseEnter);
+            this.confwaa.MouseLeave += new System.EventHandler(this.confwaa_MouseLeave);
             // 
             // descwaa
             // 
@@ -998,31 +1025,6 @@ namespace SCP
             this.label1.TabIndex = 1;
             this.label1.Text = "Placeholder";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(15, 54);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 25);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Site-Area";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "SCP",
-            "Tale/other"});
-            this.comboBox2.Location = new System.Drawing.Point(111, 54);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(147, 29);
-            this.comboBox2.TabIndex = 27;
             // 
             // Menu
             // 

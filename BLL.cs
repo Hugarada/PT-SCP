@@ -227,6 +227,38 @@ namespace BusinessLogicLayer
                 DAL dal = new DAL();
                 return dal.executarReader("SELECT * FROM Article", null);
             }
+
+            static public int insertArticle(int ID, string Name, string Description, string Writter, string Type)
+            {
+                DAL dal = new DAL();
+                SqlParameter[] sqlparams = new SqlParameter[]
+                    {
+                        new SqlParameter("@ID", ID),
+                        new SqlParameter("@Name", Name),
+                        new SqlParameter("@Description", Description),
+                        new SqlParameter("@Writter", Writter),
+                        new SqlParameter("@Aproved", "Pending"),
+                        new SqlParameter("@Type", Type)
+                    };
+                return dal.executarNonQuery("INSERT into Articles (ID, Name, Description, Writter, Aproved, Type) VALUES (@ID, @Name, @Description, @Writter, @Aproved, @Type)", sqlparams);
+            }
+
+            static public int updateArticle(string Name, string Description, string Type, string Class, int LVL, string SITE_AREA, string oldName)
+            {
+                DAL dal = new DAL();
+                SqlParameter[] sqlparams = new SqlParameter[]
+                    {
+                        new SqlParameter("@Name", Name),
+                        new SqlParameter("@Description", Description),
+                        new SqlParameter("@Type", Type),
+                        new SqlParameter("@Aproved", "Pending"),
+                        new SqlParameter("@Class", Class),
+                        new SqlParameter("@LVL", LVL),
+                        new SqlParameter("@SITE-AREA", SITE_AREA),
+                        new SqlParameter("@oldName", oldName)
+                    };
+                return dal.executarNonQuery("UPDATE Articles set [Name]=@Name, [Description]=@Description, [Type]=@Type, [Aproved]=@Aproved, [Class]=@Class, [LVL]=@LVL WHERE [Name]=@oldName", sqlparams);
+            }
         }
     }
 }

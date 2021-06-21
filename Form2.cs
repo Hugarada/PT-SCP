@@ -193,7 +193,7 @@ namespace SCP
             confwaa.Location = new Point(WaA.Size.Width - confwaa.Size.Width - 10, WaA.Size.Height - confwaa.Size.Height - 10);
 
             DataTable dt = new DataTable();
-            dt = BLL.Employees.queryEmployee(impclass);
+            dt = BLL.Employees.queryEmployee(impclass.email);
 
             button3.BackColor = Color.Black;
             button3.ForeColor = Color.White;
@@ -538,6 +538,19 @@ namespace SCP
             confwaa.ForeColor = Color.Black;
 
             loadingopener();
+
+
+        }
+
+        private void confwaa_MouseEnter(object sender, EventArgs e)
+        {
+            confwaa.BackColor = Color.FromArgb(5, 103, 241);
+        }
+
+        private void confwaa_MouseLeave(object sender, EventArgs e)
+        {
+            confwaa.BackColor = Color.Black;
+            confwaa.ForeColor = Color.White;
         }
     }
 }

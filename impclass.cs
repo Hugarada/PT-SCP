@@ -89,6 +89,8 @@ namespace SCP
             }
         }
 
+        public void changing_ArticleDB(string )
+
         public void logging(string emailed, string pass)
         {
             admin = false;
