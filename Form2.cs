@@ -191,9 +191,19 @@ namespace SCP
             WaA.Visible = true;
             descwaa.Size = new Size(WaA.Size.Width - 30, WaA.Size.Height / 2);
             confwaa.Location = new Point(WaA.Size.Width - confwaa.Size.Width - 10, WaA.Size.Height - confwaa.Size.Height - 10);
+            Article_index.Location = new Point(Type.Location.X + Type.Size.Width + 15, Type.Location.Y);
+            Article.Location = new Point(Article_index.Location.X + Article_index.Size.Width + 10, Article_index.Location.Y);
 
             DataTable dt = new DataTable();
-            dt = BLL.Employees.queryEmployee(impclass.email);
+            dt = BLL.Article.Load();
+
+            for(int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (dt.Rows[i]["Writter"].ToString() == impclass.email)
+                {
+                    Article.Items.Insert(0, dt.Rows[i]["Writter"].ToString());
+                }
+            }
 
             button3.BackColor = Color.Black;
             button3.ForeColor = Color.White;
@@ -539,7 +549,11 @@ namespace SCP
 
             loadingopener();
 
+            impclass imp = new impclass();
+            imp.changing_ArticleDB(textBox2.Text, Type.Text, comboBox1.Text, descwaa.Text, "", 0, Article.Text);
 
+            confwaa.BackColor = Color.Black;
+            confwaa.BackColor = Color.White;
         }
 
         private void confwaa_MouseEnter(object sender, EventArgs e)
@@ -551,6 +565,19 @@ namespace SCP
         {
             confwaa.BackColor = Color.Black;
             confwaa.ForeColor = Color.White;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            for (int i = 0; dt.Rows.Count < i; i++)
+            {
+                if (dt.Rows[i]["Name"].ToString() == textBox2.Text)
+                {
+                    descwaa.Text = dt.Rows[i]["Description"].ToString();
+                    break;
+                }
+            }
         }
     }
 }

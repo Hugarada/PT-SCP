@@ -19,8 +19,9 @@ namespace SCP
     class impclass
     {
         public static string username, email;
-        public static bool admin;
+        public static bool admin, managing;
         public static int act;
+        private int gotted = false;
 
         public static string ComputeSha256Hash(string rawData)
         {
@@ -89,7 +90,21 @@ namespace SCP
             }
         }
 
-        public void changing_ArticleDB(string )
+        public void changing_ArticleDB(string Name, string Type, string Site_Area, string Description, string Class, int LVL string oldName)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = BLL.Article.Load();
+                for (int i = 0; dt.Rows.Count < i; i++)
+                {
+                    if (dt.Rows[i]["Name"].ToString() == Name || admin == true && managing == true)
+                    {
+                        
+                    }
+                }
+            }
+        }
 
         public void logging(string emailed, string pass)
         {

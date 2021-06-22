@@ -228,7 +228,7 @@ namespace BusinessLogicLayer
                 return dal.executarReader("SELECT * FROM Article", null);
             }
 
-            static public int insertArticle(int ID, string Name, string Description, string Writter, string Type)
+            static public int insertArticle(int ID, string Name, string Description, string Writter, string Site_Area, string Type)
             {
                 DAL dal = new DAL();
                 SqlParameter[] sqlparams = new SqlParameter[]
@@ -238,9 +238,10 @@ namespace BusinessLogicLayer
                         new SqlParameter("@Description", Description),
                         new SqlParameter("@Writter", Writter),
                         new SqlParameter("@Aproved", "Pending"),
-                        new SqlParameter("@Type", Type)
+                        new SqlParameter("@Type", Type),
+                        new SqlParameter("@Site-Area", Site_Area)
                     };
-                return dal.executarNonQuery("INSERT into Articles (ID, Name, Description, Writter, Aproved, Type) VALUES (@ID, @Name, @Description, @Writter, @Aproved, @Type)", sqlparams);
+                return dal.executarNonQuery("INSERT into Articles (ID, Name, Description, Writter, Aproved, Type, Site-Area) VALUES (@ID, @Name, @Description, @Writter, @Aproved, @Type, @Site-Area)", sqlparams);
             }
 
             static public int updateArticle(string Name, string Description, string Type, string Class, int LVL, string SITE_AREA, string oldName)
