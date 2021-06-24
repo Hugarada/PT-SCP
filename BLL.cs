@@ -235,6 +235,8 @@ namespace BusinessLogicLayer
                     {
                         new SqlParameter("@ID", ID),
                         new SqlParameter("@Name", Name),
+                        new SqlParameter("@Type", Type),
+                        new SqlParameter("@Aproved", "Pending"),
                         new SqlParameter("@Description", Description),
                         new SqlParameter("@Writter", Writter),
                         new SqlParameter("@Aproved", "Pending"),
@@ -244,7 +246,7 @@ namespace BusinessLogicLayer
                 return dal.executarNonQuery("INSERT into Articles (ID, Name, Description, Writter, Aproved, Type, Site-Area) VALUES (@ID, @Name, @Description, @Writter, @Aproved, @Type, @Site-Area)", sqlparams);
             }
 
-            static public int updateArticle(string Name, string Description, string Type, string Class, int LVL, string SITE_AREA, string oldName)
+            static public int updateArticle(string Name, string Description, string Type, string Class, int LVL, string SITE_AREA, string oldName, string Aproved)
             {
                 DAL dal = new DAL();
                 SqlParameter[] sqlparams = new SqlParameter[]
@@ -252,13 +254,25 @@ namespace BusinessLogicLayer
                         new SqlParameter("@Name", Name),
                         new SqlParameter("@Description", Description),
                         new SqlParameter("@Type", Type),
-                        new SqlParameter("@Aproved", "Pending"),
+                        new SqlParameter("@Aproved", Aproved),
                         new SqlParameter("@Class", Class),
                         new SqlParameter("@LVL", LVL),
                         new SqlParameter("@SITE-AREA", SITE_AREA),
                         new SqlParameter("@oldName", oldName)
                     };
                 return dal.executarNonQuery("UPDATE Articles set [Name]=@Name, [Description]=@Description, [Type]=@Type, [Aproved]=@Aproved, [Class]=@Class, [LVL]=@LVL WHERE [Name]=@oldName", sqlparams);
+            }
+
+            static public Object getMax()
+            {
+                DAL dal = new DAL();
+                Object obj;
+                obj = dal.executarScalar("SELECT MAX(ID) from Article", null);
+                if (obj.ToString() == "")
+                {
+                    return 0;
+                }
+                return obj;
             }
         }
     }

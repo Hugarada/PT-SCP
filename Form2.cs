@@ -579,5 +579,13 @@ namespace SCP
                 }
             }
         }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox3.Text == "Other")
+                textBox1.Enabled = true;
+            else
+                textBox1.Enabled = false;
+        }
     }
 }

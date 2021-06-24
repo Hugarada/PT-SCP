@@ -19,9 +19,10 @@ namespace SCP
     class impclass
     {
         public static string username, email;
-        public static bool admin, managing;
+        public static bool admin;
         public static int act;
-        private int gotted = false;
+        private bool gotted = false;
+
 
         public static string ComputeSha256Hash(string rawData)
         {
@@ -90,7 +91,7 @@ namespace SCP
             }
         }
 
-        public void changing_ArticleDB(string Name, string Type, string Site_Area, string Description, string Class, int LVL string oldName)
+        public void changing_ArticleDB(string Name, string Type, string Site_Area, string Description, string Class, int LVL, string oldName)
         {
             try
             {
@@ -98,11 +99,55 @@ namespace SCP
                 dt = BLL.Article.Load();
                 for (int i = 0; dt.Rows.Count < i; i++)
                 {
-                    if (dt.Rows[i]["Name"].ToString() == Name || admin == true && managing == true)
+                    if ((dt.Rows[i]["Name"].ToString() == Name && dt.Rows[i]["Writter"].ToString() == email) || (admin == true && dt.Rows[i]["Name"].ToString() == Name))
                     {
                         
                     }
+                    else
+                    {
+                        msgdisplayer msg = new msgdisplayer();
+                        msg.msg_giver("This article name does not exist, or you don't have permission to change it...");
+                        msg.Show();
+                        break;
+                    }
                 }
+            }
+            catch(Exception e)
+            {
+                getError(e);
+            }
+        }
+
+        public void creating_ArticleDB(string Name, string Type, string Site_Area, string Description, string Class, int LVL)
+        {
+            try
+            {
+                gotted = false;
+                DataTable dt = new DataTable();
+                dt = BLL.Article.Load();
+                int MAX = Convert.ToInt16(BLL.GoI.getMax());
+                for (int i = 0; dt.Rows.Count < i; i++)
+                {
+                    if (dt.Rows[i]["Name"].ToString() == Name)
+                    {
+                        gotted = true;
+                    }
+                }
+
+                if(gotted == true)
+                {
+                    msgdisplayer msg = new msgdisplayer();
+                    msg.msg_giver("This article name is already in use...");
+                    msg.Show();
+                }
+                else
+                {
+                    BLL.Article.insertArticle(MAX, Name)
+                }
+            }
+            catch(Exception e)
+            {
+                getError(e);
             }
         }
 
