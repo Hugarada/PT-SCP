@@ -246,7 +246,7 @@ namespace BusinessLogicLayer
                 return dal.executarNonQuery("INSERT into Articles (ID, Name, Description, Writter, Aproved, Type, Site-Area) VALUES (@ID, @Name, @Description, @Writter, @Aproved, @Type, @Site-Area)", sqlparams);
             }
 
-            static public int updateArticle(string Name, string Description, string Type, string Class, int LVL, string SITE_AREA, string oldName, string Aproved)
+            static public int updateArticle(string Name, string Description, string Type, string Class, string LVL, string SITE_AREA, string oldName, string Aproved)
             {
                 DAL dal = new DAL();
                 SqlParameter[] sqlparams = new SqlParameter[]

@@ -91,25 +91,32 @@ namespace SCP
             }
         }
 
-        public void changing_ArticleDB(string Name, string Type, string Site_Area, string Description, string Class, int LVL, string oldName)
+        private void messagegiver(string m)
+        {
+            msgdisplayer msg = new msgdisplayer();
+            msg.msg_giver(m);
+            msg.Show();
+        }
+
+        public void changing_ArticleDB(string Name, string Type, string Site_Area, string Description, string Class, string LVL, string oldName, string aproved)
         {
             try
             {
                 DataTable dt = new DataTable();
                 dt = BLL.Article.Load();
+                string message = "";
                 for (int i = 0; dt.Rows.Count < i; i++)
                 {
                     if ((dt.Rows[i]["Name"].ToString() == Name && dt.Rows[i]["Writter"].ToString() == email) || (admin == true && dt.Rows[i]["Name"].ToString() == Name))
                     {
-                        
-                    }
-                    else
-                    {
-                        msgdisplayer msg = new msgdisplayer();
-                        msg.msg_giver("This article name does not exist, or you don't have permission to change it...");
-                        msg.Show();
+                        BLL.Article.updateArticle(Name, Description, Type, Class, LVL, Site_Area, oldName, aproved);
+                        message = "Article edited with success";
                         break;
                     }
+                    else
+                        message = ("This article name does not exist, or you don't have permission to change it...");
+
+                    messagegiver(message);
                 }
             }
             catch(Exception e)
@@ -134,16 +141,16 @@ namespace SCP
                     }
                 }
 
-                if(gotted == true)
-                {
-                    msgdisplayer msg = new msgdisplayer();
-                    msg.msg_giver("This article name is already in use...");
-                    msg.Show();
-                }
+                string message = "";
+
+                if (gotted == true)
+                    message = ("This article name is already in use...");
                 else
                 {
-                    BLL.Article.insertArticle(MAX, Name)
+                    BLL.Article.insertArticle(MAX, Name, Description, email, Site_Area, Type);
+                    message = ("This article name is already in use...");
                 }
+                messagegiver(message);
             }
             catch(Exception e)
             {

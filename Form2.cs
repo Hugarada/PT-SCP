@@ -549,8 +549,28 @@ namespace SCP
 
             loadingopener();
 
+            DataTable dt = new DataTable();
             impclass imp = new impclass();
-            imp.changing_ArticleDB(textBox2.Text, Type.Text, comboBox1.Text, descwaa.Text, "", 0, Article.Text);
+            bool exist = false;
+            dt = BLL.Article.Load();
+            string Class = "";
+            if (comboBox3.Text == "Other")
+                Class = textBox1.Text;
+            else
+                Class = comboBox3.Text;
+            
+            for(int i = 0; dt.Rows.Count < i; i++)
+            {
+                if (dt.Rows[i]["Name"].ToString() == Article.Text)
+                {
+                    exist = true;
+                    string Aproval = dt.Rows[i]["Aproved"].ToString();
+                    imp.changing_ArticleDB(textBox2.Text, Type.Text, comboBox2.Text, descwaa.Text, Class, comboBox4.Text, Article.Text, Aproval);
+                }
+            }
+            if(exist == false)
+            { 
+            }
 
             confwaa.BackColor = Color.Black;
             confwaa.BackColor = Color.White;
