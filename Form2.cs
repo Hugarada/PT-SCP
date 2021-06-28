@@ -549,27 +549,44 @@ namespace SCP
 
             loadingopener();
 
-            DataTable dt = new DataTable();
-            impclass imp = new impclass();
-            bool exist = false;
-            dt = BLL.Article.Load();
-            string Class = "";
-            if (comboBox3.Text == "Other")
-                Class = textBox1.Text;
-            else
-                Class = comboBox3.Text;
-            
-            for(int i = 0; dt.Rows.Count < i; i++)
+            if (comboBox3.Text == "" && textBox1.Text == "")
             {
-                if (dt.Rows[i]["Name"].ToString() == Article.Text)
-                {
-                    exist = true;
-                    string Aproval = dt.Rows[i]["Aproved"].ToString();
-                    imp.changing_ArticleDB(textBox2.Text, Type.Text, comboBox2.Text, descwaa.Text, Class, comboBox4.Text, Article.Text, Aproval);
-                }
+                msgdisplayer ms = new msgdisplayer();
+                ms.msg_giver("Name information must be entered...");
+                ms.Show();
             }
-            if(exist == false)
-            { 
+            else
+            {
+                DataTable dt = new DataTable();
+                impclass imp = new impclass();
+                bool exist = false;
+                dt = BLL.Article.Load();
+                string Clas = "";
+                if (comboBox3.Text == "Other")
+                {
+                    Clas = textBox1.Text;
+                    textBox1.Enabled = true;
+                }
+                else
+                {
+                    Clas = comboBox3.Text;
+                    textBox1.Enabled = false;
+                }
+
+                for (int i = 0; dt.Rows.Count < i; i++)
+                {
+                    if (dt.Rows[i]["Name"].ToString() == Article.Text)
+                    {
+                        exist = true;
+                        string Aproval = dt.Rows[i]["Aproved"].ToString();
+                        imp.changing_ArticleDB(textBox2.Text, Type.Text, comboBox2.Text, descwaa.Text, Clas, comboBox4.Text, Article.Text, Aproval);
+                        break;
+                    }
+                }
+                if (exist == false)
+                {
+                    imp.creating_ArticleDB(textBox2.Text, Type.Text, comboBox2.Text, descwaa.Text, Clas, comboBox4.Text);
+                }
             }
 
             confwaa.BackColor = Color.Black;

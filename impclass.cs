@@ -125,7 +125,7 @@ namespace SCP
             }
         }
 
-        public void creating_ArticleDB(string Name, string Type, string Site_Area, string Description, string Class, int LVL)
+        public void creating_ArticleDB(string Name, string Type, string Site_Area, string Description, string Class, string LVL)
         {
             try
             {
@@ -148,7 +148,7 @@ namespace SCP
                 else
                 {
                     BLL.Article.insertArticle(MAX, Name, Description, email, Site_Area, Type);
-                    message = ("This article name is already in use...");
+                    message = ("Article created with success...");
                 }
                 messagegiver(message);
             }

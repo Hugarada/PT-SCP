@@ -435,7 +435,7 @@ namespace SCP
             this.Article_index.AutoSize = true;
             this.Article_index.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Article_index.ForeColor = System.Drawing.Color.White;
-            this.Article_index.Location = new System.Drawing.Point(296, 54);
+            this.Article_index.Location = new System.Drawing.Point(291, 54);
             this.Article_index.Name = "Article_index";
             this.Article_index.Size = new System.Drawing.Size(67, 25);
             this.Article_index.TabIndex = 28;
