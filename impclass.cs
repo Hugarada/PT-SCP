@@ -147,7 +147,7 @@ namespace SCP
                     message = ("This article name is already in use...");
                 else
                 {
-                    BLL.Article.insertArticle(MAX, Name, Description, email, Site_Area, Type);
+                    BLL.Article.insertArticle(MAX, Name, Description, email, Site_Area, Type, LVL);
                     message = ("Article created with success...");
                 }
                 messagegiver(message);

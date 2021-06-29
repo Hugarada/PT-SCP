@@ -158,6 +158,7 @@ namespace SCP
             label2.Visible = false;
             Manage.Visible = false;
             GoIpanel.Visible = false;
+            MaA.Visible = false;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -204,6 +205,9 @@ namespace SCP
                     Article.Items.Insert(0, dt.Rows[i]["Writter"].ToString());
                 }
             }
+            dt = BLL.website.Load();
+            for (int i = 0; i < dt.Rows.Count; i++)
+                comboBox2.Items.Insert(i, dt.Rows[i]["Site-Area"].ToString());
 
             button3.BackColor = Color.Black;
             button3.ForeColor = Color.White;
@@ -272,9 +276,11 @@ namespace SCP
                 Apply.Location = new Point(Manage.Location.X + Manage.Size.Width - Apply.Size.Width - 10, Manage.Location.Y + Manage.Size.Height - Apply.Size.Height - 15); //Relocating the items and clearing them
 
                 for (int i = 0; i < dt.Rows.Count; i++) //Re-entering the items information
-                {
-                    comboBox1.Items.Insert(i, dt.Rows[i]["Email"]);
-                }
+                    comboBox1.Items.Insert(i, dt.Rows[i]["Email"].ToString());
+
+                dt = BLL.website.Load();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                    SITE_AREA.Items.Insert(i, dt.Rows[i]["Site-Area"].ToString());
             }
             catch(Exception ee)
             {
@@ -549,7 +555,7 @@ namespace SCP
 
             loadingopener();
 
-            if (comboBox3.Text == "" && textBox1.Text == "")
+            if (Article.Text == "" && textBox2.Text == "")
             {
                 msgdisplayer ms = new msgdisplayer();
                 ms.msg_giver("Name information must be entered...");
@@ -573,20 +579,21 @@ namespace SCP
                     textBox1.Enabled = false;
                 }
 
-                for (int i = 0; dt.Rows.Count < i; i++)
+                if(Article.Text != "")
                 {
-                    if (dt.Rows[i]["Name"].ToString() == Article.Text)
+                    for (int i = 0; dt.Rows.Count < i; i++)
                     {
-                        exist = true;
-                        string Aproval = dt.Rows[i]["Aproved"].ToString();
-                        imp.changing_ArticleDB(textBox2.Text, Type.Text, comboBox2.Text, descwaa.Text, Clas, comboBox4.Text, Article.Text, Aproval);
-                        break;
+                        if (dt.Rows[i]["Name"].ToString() == Article.Text)
+                        {
+                            exist = true;
+                            string Aproval = dt.Rows[i]["Aproved"].ToString();
+                            imp.changing_ArticleDB(textBox2.Text, Type.Text, comboBox2.Text, descwaa.Text, Clas, comboBox4.Text, Article.Text, Aproval);
+                            break;
+                        }
                     }
                 }
                 if (exist == false)
-                {
                     imp.creating_ArticleDB(textBox2.Text, Type.Text, comboBox2.Text, descwaa.Text, Clas, comboBox4.Text);
-                }
             }
 
             confwaa.BackColor = Color.Black;
@@ -623,6 +630,29 @@ namespace SCP
                 textBox1.Enabled = true;
             else
                 textBox1.Enabled = false;
+        }
+
+        private void button9_DragEnter(object sender, DragEventArgs e)
+        {
+            button9.BackColor = Color.FromArgb(5, 103, 241);
+            button9.ForeColor = Color.White;
+        }
+
+        private void button9_DragLeave(object sender, EventArgs e)
+        {
+            button9.BackColor = Color.Black;
+            button9.ForeColor = Color.White;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            button9.BackColor = Color.White;
+            button9.ForeColor = Color.Black;
+
+            loadingopener();
+
+            MaA.Visible = true;
+            confirming.Location = new Point(MaA.Location.X + MaA.Size.Width - confirming.Size.Width - 10, MaA.Location.Y + MaA.Size.Height - confirming.Size.Height - 15);
         }
     }
 }
