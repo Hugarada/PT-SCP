@@ -653,6 +653,9 @@ namespace SCP
 
             MaA.Visible = true;
             confirming.Location = new Point(MaA.Location.X + MaA.Size.Width - confirming.Size.Width - 10, MaA.Location.Y + MaA.Size.Height - confirming.Size.Height - 15);
+
+            button9.BackColor = Color.White;
+            button9.ForeColor = Color.Black;
         }
     }
 }
