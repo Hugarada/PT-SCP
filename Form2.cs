@@ -654,8 +654,18 @@ namespace SCP
             MaA.Visible = true;
             confirming.Location = new Point(MaA.Location.X + MaA.Size.Width - confirming.Size.Width - 10, MaA.Location.Y + MaA.Size.Height - confirming.Size.Height - 15);
 
+            typed.Text = "";
+            Classy.Text = "";
+            Leveling.Text = "";
+            SA.Text = "";
+
             button9.BackColor = Color.White;
             button9.ForeColor = Color.Black;
+        }
+
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
