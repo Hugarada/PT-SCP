@@ -235,17 +235,17 @@ namespace BusinessLogicLayer
                     {
                         new SqlParameter("@ID", ID),
                         new SqlParameter("@Name", Name),
-                        new SqlParameter("@Aproved", "Pending"),
+                        new SqlParameter("@Approved", "Pending"),
                         new SqlParameter("@Description", Description),
                         new SqlParameter("@Writter", Writter),
                         new SqlParameter("@Type", Type),
                         new SqlParameter("@Site_Area", Site_Area),
                         new SqlParameter("@LVL", LVL)
                     };
-                return dal.executarNonQuery("INSERT into Article (ID, Name, Description, Writter, Aproved, Type, Site_Area, LVL) VALUES (@ID, @Name, @Description, @Writter, @Aproved, @Type, @Site_Area, @LVL)", sqlparams);
+                return dal.executarNonQuery("INSERT into Article (ID, Name, Description, Writter, Approved, Type, Site_Area, LVL) VALUES (@ID, @Name, @Description, @Writter, @Approved, @Type, @Site_Area, @LVL)", sqlparams);
             }
 
-            static public int updateArticle(string Name, string Description, string Type, string Class, string LVL, string SITE_AREA, string oldName, string Aproved)
+            static public int updateArticle(string Name, string Description, string Type, string Class, string LVL, string SITE_AREA, string oldName, string Approved)
             {
                 DAL dal = new DAL();
                 SqlParameter[] sqlparams = new SqlParameter[]
@@ -253,13 +253,13 @@ namespace BusinessLogicLayer
                         new SqlParameter("@Name", Name),
                         new SqlParameter("@Description", Description),
                         new SqlParameter("@Type", Type),
-                        new SqlParameter("@Aproved", Aproved),
+                        new SqlParameter("@Approved", Approved),
                         new SqlParameter("@Class", Class),
                         new SqlParameter("@LVL", LVL),
                         new SqlParameter("@SITE-AREA", SITE_AREA),
                         new SqlParameter("@oldName", oldName)
                     };
-                return dal.executarNonQuery("UPDATE Article set [Name]=@Name, [Description]=@Description, [Type]=@Type, [Aproved]=@Aproved, [Class]=@Class, [LVL]=@LVL WHERE [Name]=@oldName", sqlparams);
+                return dal.executarNonQuery("UPDATE Article set [Name]=@Name, [Description]=@Description, [Type]=@Type, [Approved]=@Approved, [Class]=@Class, [LVL]=@LVL WHERE [Name]=@oldName", sqlparams);
             }
 
             static public Object getMax()

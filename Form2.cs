@@ -665,7 +665,44 @@ namespace SCP
 
         private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBox5.Visible = true;
+            comboBox5.Enabled = true;
+            label12.Visible = true;
+            label12.Enabled = true;
+            comboBox5.Location = new Point(confirming.Location.X - confirming.Size.Width - 30, confirming.Location.Y);
+            label12.Location = new Point(comboBox5.Location.X - comboBox5.Size.Width - 15, comboBox5.Location.Y);
+            if(comboBox7.Text == "SCP")
+            {
+                Managementplacement(true);
+                Description.Location = new Point(Description.Location.X, label17.Location.Y + 30);
+                desc.Location = new Point(desc.Location.X, Description.Location.Y + Description.Size.Height + 15);
+            }
+            else
+            {
+                Managementplacement(false);
+                Description.Location = new Point(Description.Location.X, label13.Location.Y + 30);
+                desc.Location = new Point(desc.Location.X, Description.Location.Y + Description.Size.Height + 15);
+            }
+            desc.Visible = true;
+            Description.Visible = true;
+        }
 
+        private void Managementplacement(bool setter)
+        {
+            WritterID.Visible = setter;
+            label17.Visible = setter;
+            SA.Visible = setter;
+            label16.Visible = setter;
+            Leveling.Visible = setter;
+            label15.Visible = setter;
+            Classy.Visible = setter;
+            label14.Visible = setter;
+            typed.Visible = setter;
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            confirming.Enabled = true;
         }
     }
 }
