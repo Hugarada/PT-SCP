@@ -93,7 +93,6 @@ C:\Users\119739\Desktop\PT-SCP\obj\Debug\SCP.loadded.resources
 C:\Users\ACER\Desktop\PT-SCP\bin\Debug\SCP.exe.config
 C:\Users\ACER\Desktop\PT-SCP\bin\Debug\SCP.exe
 C:\Users\ACER\Desktop\PT-SCP\bin\Debug\SCP.pdb
-C:\Users\ACER\Desktop\PT-SCP\obj\Debug\SCP.csprojAssemblyReference.cache
 C:\Users\ACER\Desktop\PT-SCP\obj\Debug\SCP.Login.resources
 C:\Users\ACER\Desktop\PT-SCP\obj\Debug\SCP.Menu.resources
 C:\Users\ACER\Desktop\PT-SCP\obj\Debug\SCP.loadded.resources
@@ -119,3 +118,4 @@ C:\Users\Hugo Parada\Documents\EPGE\PT-SCP\obj\Debug\SCP.csproj.GenerateResource
 C:\Users\Hugo Parada\Documents\EPGE\PT-SCP\obj\Debug\SCP.csproj.CoreCompileInputs.cache
 C:\Users\Hugo Parada\Documents\EPGE\PT-SCP\obj\Debug\SCP.exe
 C:\Users\Hugo Parada\Documents\EPGE\PT-SCP\obj\Debug\SCP.pdb
+C:\Users\ACER\Desktop\PT-SCP\obj\Debug\SCP.csproj.AssemblyReference.cache

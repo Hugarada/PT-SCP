@@ -179,6 +179,25 @@ namespace SCP
             button2.BackColor = Color.White;
             button2.ForeColor = Color.Black;
             this.Refresh();
+
+            Article_list.Visible = true;
+            DataTable dt = new DataTable();
+            dt = BLL.Article.only_SCPs();
+            LinkLabel[] artic = new LinkLabel[dt.Rows.Count]; 
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                artic[i] = new LinkLabel();
+                artic[i].Font = new Font("Nirmala UI", 12F, FontStyle.Regular);
+                if (i == 0)
+                    artic[i].Location = new Point(Article_list.Location.X + 15, SCPs_loc.Location.Y + 15);
+                else
+                    artic[i].Location = new Point(artic[i - 1].Location.X, artic[i - 1].Location.Y + 10);
+                artic[i].Text = dt.Rows[i]["Name"].ToString();
+            }
+
+            dt = BLL.Article.only_tales();
+            LinkLabel[] taled = new LinkLabel[dt.Rows.Count];
+
             button2.BackColor = Color.Black;
             button2.ForeColor = Color.White;
         }
@@ -710,10 +729,7 @@ namespace SCP
             loadingopener();
 
             impclass imp = new impclass();
-            if (typing == true)
-                imp.changing_ArticleDB(Articling.Text, typed.Text, SA.Text, desc.Text, Classy.Text, Leveling.Text, Articling.Text, comboBox5.Text);
-            else
-                imp.changing_ArticleDB(Articling.Text, "", "", desc.Text, "", comboBox5.Text);
+            imp.changing_ArticleDB(Articling.Text, typed.Text, SA.Text, desc.Text, Classy.Text, Leveling.Text, Articling.Text, comboBox5.Text);
 
             confirming.BackColor = Color.Black;
             confirming.ForeColor = Color.White;
@@ -734,7 +750,13 @@ namespace SCP
                 desc.Text = dt.Rows[0]["Description"].ToString();
             }
             else
+            {
                 desc.Text = dt.Rows[0]["Description"].ToString();
+                Classy.Text = "";
+                Leveling.Text = "";
+                SA.Text = "";
+                WritterID.Text = "";
+            }
         }
 
         private void button9_MouseEnter(object sender, EventArgs e)

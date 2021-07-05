@@ -105,19 +105,18 @@ namespace SCP
                 DataTable dt = new DataTable();
                 dt = BLL.Article.Load();
                 string message = "";
-                for (int i = 0; dt.Rows.Count < i; i++)
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     if ((dt.Rows[i]["Name"].ToString() == Name && dt.Rows[i]["Writter"].ToString() == email) || (admin == true && dt.Rows[i]["Name"].ToString() == Name))
                     {
                         BLL.Article.updateArticle(Name, Description, Type, Class, LVL, Site_Area, oldName, aproved);
-                        message = "Article edited with success";
+                        message = ("Article edited with success");
                         break;
                     }
                     else
                         message = ("This article name does not exist, or you don't have permission to change it...");
-
-                    messagegiver(message);
                 }
+                messagegiver(message);
             }
             catch(Exception e)
             {

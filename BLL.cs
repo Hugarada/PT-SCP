@@ -256,7 +256,7 @@ namespace BusinessLogicLayer
                         new SqlParameter("@Approved", Approved),
                         new SqlParameter("@Class", Class),
                         new SqlParameter("@LVL", LVL),
-                        new SqlParameter("@SITE-AREA", SITE_AREA),
+                        new SqlParameter("@SITE_AREA", SITE_AREA),
                         new SqlParameter("@oldName", oldName)
                     };
                 return dal.executarNonQuery("UPDATE Article set [Name]=@Name, [Description]=@Description, [Type]=@Type, [Approved]=@Approved, [Class]=@Class, [LVL]=@LVL WHERE [Name]=@oldName", sqlparams);
