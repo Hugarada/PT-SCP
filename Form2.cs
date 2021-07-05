@@ -23,6 +23,7 @@ namespace SCP
 
         int actualmenu;
         Random rnd = new Random();
+        bool typing = false;
 
         // loadded menu
         private void Menu_Load(object sender, EventArgs e)
@@ -33,11 +34,13 @@ namespace SCP
             {
                 button7.Visible = false;
                 button8.Visible = false;
+                button9.Visible = false;
             }
             else
             {
                 button7.Visible = true;
                 button8.Visible = true;
+                button9.Visible = true;
             }
         }
 
@@ -632,18 +635,6 @@ namespace SCP
                 textBox1.Enabled = false;
         }
 
-        private void button9_DragEnter(object sender, DragEventArgs e)
-        {
-            button9.BackColor = Color.FromArgb(5, 103, 241);
-            button9.ForeColor = Color.White;
-        }
-
-        private void button9_DragLeave(object sender, EventArgs e)
-        {
-            button9.BackColor = Color.Black;
-            button9.ForeColor = Color.White;
-        }
-
         private void button9_Click(object sender, EventArgs e)
         {
             button9.BackColor = Color.White;
@@ -652,42 +643,47 @@ namespace SCP
             loadingopener();
 
             MaA.Visible = true;
-            confirming.Location = new Point(MaA.Location.X + MaA.Size.Width - confirming.Size.Width - 10, MaA.Location.Y + MaA.Size.Height - confirming.Size.Height - 15);
+            confirming.Location = new Point(MaA.Size.Width - confirming.Size.Width - 10, MaA.Size.Height - confirming.Size.Height - 15);
+            desc.Size = new Size(MaA.Size.Width - 30, MaA.Size.Height / 2);
 
             typed.Text = "";
             Classy.Text = "";
             Leveling.Text = "";
             SA.Text = "";
 
-            button9.BackColor = Color.White;
-            button9.ForeColor = Color.Black;
+            button9.BackColor = Color.Black;
+            button9.ForeColor = Color.White;
         }
 
         private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox5.Visible = true;
-            comboBox5.Enabled = true;
-            label12.Visible = true;
             label18.Visible = true;
             Articling.Visible = true;
+            label11.Visible = true;
+            typed.Visible = true;
             comboBox5.Location = new Point(confirming.Location.X - confirming.Size.Width - 30, confirming.Location.Y);
             label12.Location = new Point(comboBox5.Location.X - comboBox5.Size.Width - 15, comboBox5.Location.Y);
             DataTable dt = new DataTable();
-            dt = BLL.Article.Load();
             Articling.Items.Clear();
             if (comboBox7.Text == "SCP")
             {
-                Managementplacement(true);
+                typing = true;
                 Description.Location = new Point(Description.Location.X, label17.Location.Y + 30);
                 desc.Location = new Point(desc.Location.X, Description.Location.Y + Description.Size.Height + 15);
-                for (int i = 0; dt.Rows.Count < i; i++)
+                dt = BLL.Article.only_SCPs();
+                for (int i = 0; i < dt.Rows.Count; i++)
                     Articling.Items.Insert(i, dt.Rows[i]["Name"].ToString());
+                typed.Text = "SCP";
             }
             else
             {
-                Managementplacement(false);
-                Description.Location = new Point(Description.Location.X, label13.Location.Y + 30);
+                typing = false;
+                Description.Location = new Point(label11.Location.X, label11.Location.Y + 30);
                 desc.Location = new Point(desc.Location.X, Description.Location.Y + Description.Size.Height + 15);
+                dt = BLL.Article.only_tales();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                    Articling.Items.Insert(i, dt.Rows[i]["Name"].ToString());
+                typed.Text = "Tale";
             }
             desc.Visible = true;
             Description.Visible = true;
@@ -703,24 +699,11 @@ namespace SCP
             label15.Visible = setter;
             Classy.Visible = setter;
             label14.Visible = setter;
-            typed.Visible = setter;
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
             confirming.Enabled = true;
-        }
-
-        private void confirming_MouseEnter(object sender, EventArgs e)
-        {
-            confirming.BackColor = Color.FromArgb(5, 103, 241);
-            confirming.ForeColor = Color.White;
-        }
-
-        private void confirming_MouseLeave(object sender, EventArgs e)
-        {
-            confirming.BackColor = Color.Black;
-            confirming.ForeColor = Color.White;
         }
 
         private void confirming_Click(object sender, EventArgs e)
@@ -732,6 +715,43 @@ namespace SCP
             loadingopener();
 
             impclass imp = new impclass();
+            if (typing == true)
+                imp.changing_ArticleDB(Articling.Text, typed.Text, SA.Text, desc.Text, Classy.Text, Leveling.Text, Articling.Text, comboBox5.Text);
+            else
+                imp.creating_ArticleDB(Articling.Text, "", "", desc.Text, "", "");
+
+            confirming.BackColor = Color.Black;
+            confirming.ForeColor = Color.White;
+        }
+
+        private void Articling_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            confirming.Visible = true;
+            DataTable dt = new DataTable();
+            dt = BLL.Article.get_article(Articling.Text);
+            Managementplacement(typing);
+            if (typing == true)
+            {
+                Classy.Text = dt.Rows[0]["Class"].ToString();
+                Leveling.Text = dt.Rows[0]["LVL"].ToString();
+                SA.Text = dt.Rows[0]["SITE_AREA"].ToString();
+                WritterID.Text = dt.Rows[0]["Writter"].ToString();
+                desc.Text = dt.Rows[0]["Description"].ToString();
+            }
+            else
+                desc.Text = dt.Rows[0]["Description"].ToString();
+        }
+
+        private void button9_MouseEnter(object sender, EventArgs e)
+        {
+            button9.BackColor = Color.FromArgb(5, 103, 241);
+            button9.ForeColor = Color.White;
+        }
+
+        private void button9_MouseLeave(object sender, EventArgs e)
+        {
+            button9.BackColor = Color.Black;
+            button9.ForeColor = Color.White;
         }
     }
 }

@@ -45,9 +45,11 @@ namespace SCP
             this.Usernamecont = new System.Windows.Forms.Label();
             this.panelmenu = new System.Windows.Forms.Panel();
             this.MaA = new System.Windows.Forms.Panel();
+            this.desc = new System.Windows.Forms.TextBox();
+            this.Articling = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.desc = new System.Windows.Forms.Label();
             this.Description = new System.Windows.Forms.Label();
             this.WritterID = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -121,8 +123,6 @@ namespace SCP
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Articling = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilepic)).BeginInit();
@@ -170,8 +170,8 @@ namespace SCP
             this.button9.Text = "Manage Articles";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
-            this.button9.DragEnter += new System.Windows.Forms.DragEventHandler(this.button9_DragEnter);
-            this.button9.DragLeave += new System.EventHandler(this.button9_DragLeave);
+            this.button9.MouseEnter += new System.EventHandler(this.button9_MouseEnter);
+            this.button9.MouseLeave += new System.EventHandler(this.button9_MouseLeave);
             // 
             // button8
             // 
@@ -364,11 +364,11 @@ namespace SCP
             // 
             // MaA
             // 
+            this.MaA.Controls.Add(this.desc);
             this.MaA.Controls.Add(this.Articling);
             this.MaA.Controls.Add(this.label18);
             this.MaA.Controls.Add(this.comboBox5);
             this.MaA.Controls.Add(this.label12);
-            this.MaA.Controls.Add(this.desc);
             this.MaA.Controls.Add(this.Description);
             this.MaA.Controls.Add(this.WritterID);
             this.MaA.Controls.Add(this.label17);
@@ -389,6 +389,43 @@ namespace SCP
             this.MaA.Size = new System.Drawing.Size(565, 483);
             this.MaA.TabIndex = 35;
             this.MaA.Visible = false;
+            // 
+            // desc
+            // 
+            this.desc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
+            this.desc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.desc.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.desc.Location = new System.Drawing.Point(25, 160);
+            this.desc.Multiline = true;
+            this.desc.Name = "desc";
+            this.desc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.desc.Size = new System.Drawing.Size(100, 20);
+            this.desc.TabIndex = 46;
+            // 
+            // Articling
+            // 
+            this.Articling.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
+            this.Articling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Articling.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.Articling.FormattingEnabled = true;
+            this.Articling.Location = new System.Drawing.Point(364, 9);
+            this.Articling.Name = "Articling";
+            this.Articling.Size = new System.Drawing.Size(147, 29);
+            this.Articling.TabIndex = 45;
+            this.Articling.Visible = false;
+            this.Articling.SelectedIndexChanged += new System.EventHandler(this.Articling_SelectedIndexChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(291, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(67, 25);
+            this.label18.TabIndex = 44;
+            this.label18.Text = "Article";
+            this.label18.Visible = false;
             // 
             // comboBox5
             // 
@@ -414,18 +451,6 @@ namespace SCP
             this.label12.Size = new System.Drawing.Size(88, 25);
             this.label12.TabIndex = 42;
             this.label12.Text = "Approval";
-            // 
-            // desc
-            // 
-            this.desc.AutoSize = true;
-            this.desc.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desc.ForeColor = System.Drawing.Color.White;
-            this.desc.Location = new System.Drawing.Point(16, 160);
-            this.desc.Name = "desc";
-            this.desc.Size = new System.Drawing.Size(42, 25);
-            this.desc.TabIndex = 41;
-            this.desc.Text = "test";
-            this.desc.Visible = false;
             // 
             // Description
             // 
@@ -516,7 +541,7 @@ namespace SCP
             this.Classy.AutoSize = true;
             this.Classy.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Classy.ForeColor = System.Drawing.Color.White;
-            this.Classy.Location = new System.Drawing.Point(231, 54);
+            this.Classy.Location = new System.Drawing.Point(231, 58);
             this.Classy.Name = "Classy";
             this.Classy.Size = new System.Drawing.Size(42, 25);
             this.Classy.TabIndex = 33;
@@ -568,7 +593,7 @@ namespace SCP
             this.comboBox7.Items.AddRange(new object[] {
             "SCP",
             "Tale"});
-            this.comboBox7.Location = new System.Drawing.Point(126, 3);
+            this.comboBox7.Location = new System.Drawing.Point(138, 9);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(147, 29);
             this.comboBox7.TabIndex = 29;
@@ -602,8 +627,6 @@ namespace SCP
             this.confirming.UseVisualStyleBackColor = false;
             this.confirming.Visible = false;
             this.confirming.Click += new System.EventHandler(this.confirming_Click);
-            this.confirming.MouseEnter += new System.EventHandler(this.confirming_MouseEnter);
-            this.confirming.MouseLeave += new System.EventHandler(this.confirming_MouseLeave);
             // 
             // WaA
             // 
@@ -1415,30 +1438,6 @@ namespace SCP
             this.label1.Text = "Placeholder";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Articling
-            // 
-            this.Articling.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
-            this.Articling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Articling.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.Articling.FormattingEnabled = true;
-            this.Articling.Location = new System.Drawing.Point(364, 9);
-            this.Articling.Name = "Articling";
-            this.Articling.Size = new System.Drawing.Size(147, 29);
-            this.Articling.TabIndex = 45;
-            this.Articling.Visible = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(291, 9);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(67, 25);
-            this.label18.TabIndex = 44;
-            this.label18.Text = "Article";
-            this.label18.Visible = false;
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1559,7 +1558,6 @@ namespace SCP
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label SA;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label desc;
         private System.Windows.Forms.Label Description;
         private System.Windows.Forms.Label WritterID;
         private System.Windows.Forms.Label label17;
@@ -1567,5 +1565,6 @@ namespace SCP
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox Articling;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox desc;
     }
 }

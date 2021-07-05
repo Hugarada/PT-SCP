@@ -277,7 +277,23 @@ namespace BusinessLogicLayer
             static public DataTable only_SCPs()
             {
                 DAL dal = new DAL();
-                return dal.executarReader("SELECT * FROM Articles WHERE ");
+                return dal.executarReader("SELECT * FROM Article WHERE Type='SCP'", null);
+            }
+
+            static public DataTable only_tales()
+            {
+                DAL dal = new DAL();
+                return dal.executarReader("SELECT * FROM Article WHERE Type='Tale'", null);
+            }
+
+            static public DataTable get_article(string Name)
+            {
+                DAL dal = new DAL();
+                SqlParameter[] sqlparams = new SqlParameter[]
+                {
+                    new SqlParameter("@Name", Name)
+                };
+                return dal.executarReader("SELECT * FROM Article WHERE Name=@Name", sqlparams);
             }
         }
 
