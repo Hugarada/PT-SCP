@@ -295,6 +295,16 @@ namespace BusinessLogicLayer
                 };
                 return dal.executarReader("SELECT * FROM Article WHERE Name=@Name", sqlparams);
             }
+
+            static public DataTable get_article_byEmail(string Writter)
+            {
+                DAL dal = new DAL();
+                SqlParameter[] sqlparams = new SqlParameter[]
+                {
+                    new SqlParameter("@Writter", Writter)
+                };
+                return dal.executarReader("SELECT * FROM Article WHERE Writter=@Writter", sqlparams);
+            }
         }
 
         public class website

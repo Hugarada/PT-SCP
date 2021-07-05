@@ -199,18 +199,12 @@ namespace SCP
             Article.Location = new Point(Article_index.Location.X + Article_index.Size.Width + 10, Article_index.Location.Y);
 
             DataTable dt = new DataTable();
-            dt = BLL.Article.Load();
-
-            for(int i = 0; i < dt.Rows.Count; i++)
-            {
-                if (dt.Rows[i]["Writter"].ToString() == impclass.email)
-                {
-                    Article.Items.Insert(0, dt.Rows[i]["Writter"].ToString());
-                }
-            }
+            dt = BLL.Article.get_article_byEmail(impclass.email);
+            for(int i = 0; i < dt.Rows.Count; i++)           
+                Article.Items.Insert(i, dt.Rows[i]["Name"].ToString());
             dt = BLL.website.Load();
             for (int i = 0; i < dt.Rows.Count; i++)
-                comboBox2.Items.Insert(i, dt.Rows[i]["Site-Area"].ToString());
+                comboBox2.Items.Insert(i, dt.Rows[i]["Site_Area"].ToString());
 
             button3.BackColor = Color.Black;
             button3.ForeColor = Color.White;
@@ -752,6 +746,18 @@ namespace SCP
         {
             button9.BackColor = Color.Black;
             button9.ForeColor = Color.White;
+        }
+
+        private void Article_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = BLL.Article.get_article(Article.Text);
+            comboBox2.Text = dt.Rows[0]["Site_Area"].ToString();
+            Type.Text = dt.Rows[0]["Type"].ToString();
+            if (dt.Rows[0]["Class"].ToString() != "Safe" && dt.Rows[0]["Class"].ToString() != "Euclid" && dt.Rows[0]["Class"].ToString() != "Keter" && dt.Rows[0]["Class"].ToString() != "Thaumiel" && dt.Rows[0]["Class"].ToString() != "Appolyon")
+                textBox1.Text = dt.Rows[0]["Class"].ToString();
+            else
+                comboBox3.Text = dt.Rows[0]["Class"].ToString();
         }
     }
 }

@@ -350,8 +350,8 @@ namespace SCP
             // 
             // panelmenu
             // 
-            this.panelmenu.Controls.Add(this.MaA);
             this.panelmenu.Controls.Add(this.WaA);
+            this.panelmenu.Controls.Add(this.MaA);
             this.panelmenu.Controls.Add(this.Profile);
             this.panelmenu.Controls.Add(this.GoIpanel);
             this.panelmenu.Controls.Add(this.Manage);
@@ -704,7 +704,7 @@ namespace SCP
             "Safe",
             "Euclid",
             "Keter",
-            "Apolion",
+            "Appolyon",
             "Thaumiel",
             "Other"});
             this.comboBox3.Location = new System.Drawing.Point(76, 92);
@@ -734,6 +734,7 @@ namespace SCP
             this.Article.Name = "Article";
             this.Article.Size = new System.Drawing.Size(147, 29);
             this.Article.TabIndex = 29;
+            this.Article.SelectedIndexChanged += new System.EventHandler(this.Article_SelectedIndexChanged);
             // 
             // Article_index
             // 
