@@ -44,6 +44,23 @@ namespace SCP
             this.profilepic = new System.Windows.Forms.PictureBox();
             this.Usernamecont = new System.Windows.Forms.Label();
             this.panelmenu = new System.Windows.Forms.Panel();
+            this.WaA = new System.Windows.Forms.Panel();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Article = new System.Windows.Forms.ComboBox();
+            this.Article_index = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Type = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.confwaa = new System.Windows.Forms.Button();
+            this.descwaa = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.MaA = new System.Windows.Forms.Panel();
             this.desc = new System.Windows.Forms.TextBox();
             this.Articling = new System.Windows.Forms.ComboBox();
@@ -64,23 +81,6 @@ namespace SCP
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.confirming = new System.Windows.Forms.Button();
-            this.WaA = new System.Windows.Forms.Panel();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.Article = new System.Windows.Forms.ComboBox();
-            this.Article_index = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Type = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.confwaa = new System.Windows.Forms.Button();
-            this.descwaa = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.Profile = new System.Windows.Forms.Panel();
             this.confprof = new System.Windows.Forms.Button();
             this.profile_text = new System.Windows.Forms.TextBox();
@@ -127,8 +127,8 @@ namespace SCP
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilepic)).BeginInit();
             this.panelmenu.SuspendLayout();
-            this.MaA.SuspendLayout();
             this.WaA.SuspendLayout();
+            this.MaA.SuspendLayout();
             this.Profile.SuspendLayout();
             this.GoIpanel.SuspendLayout();
             this.Manage.SuspendLayout();
@@ -350,8 +350,8 @@ namespace SCP
             // 
             // panelmenu
             // 
-            this.panelmenu.Controls.Add(this.WaA);
             this.panelmenu.Controls.Add(this.MaA);
+            this.panelmenu.Controls.Add(this.WaA);
             this.panelmenu.Controls.Add(this.Profile);
             this.panelmenu.Controls.Add(this.GoIpanel);
             this.panelmenu.Controls.Add(this.Manage);
@@ -361,6 +361,238 @@ namespace SCP
             this.panelmenu.Name = "panelmenu";
             this.panelmenu.Size = new System.Drawing.Size(565, 748);
             this.panelmenu.TabIndex = 0;
+            // 
+            // WaA
+            // 
+            this.WaA.Controls.Add(this.comboBox4);
+            this.WaA.Controls.Add(this.label10);
+            this.WaA.Controls.Add(this.textBox1);
+            this.WaA.Controls.Add(this.comboBox3);
+            this.WaA.Controls.Add(this.label9);
+            this.WaA.Controls.Add(this.Article);
+            this.WaA.Controls.Add(this.Article_index);
+            this.WaA.Controls.Add(this.comboBox2);
+            this.WaA.Controls.Add(this.label8);
+            this.WaA.Controls.Add(this.Type);
+            this.WaA.Controls.Add(this.label7);
+            this.WaA.Controls.Add(this.confwaa);
+            this.WaA.Controls.Add(this.descwaa);
+            this.WaA.Controls.Add(this.label5);
+            this.WaA.Controls.Add(this.textBox2);
+            this.WaA.Controls.Add(this.label6);
+            this.WaA.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WaA.Location = new System.Drawing.Point(0, 265);
+            this.WaA.Name = "WaA";
+            this.WaA.Size = new System.Drawing.Size(565, 483);
+            this.WaA.TabIndex = 24;
+            this.WaA.Visible = false;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
+            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox4.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "05"});
+            this.comboBox4.Location = new System.Drawing.Point(424, 92);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(147, 29);
+            this.comboBox4.TabIndex = 34;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(382, 92);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 25);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "LVL";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(229, 95);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(147, 22);
+            this.textBox1.TabIndex = 32;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
+            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox3.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Safe",
+            "Euclid",
+            "Keter",
+            "Appolyon",
+            "Thaumiel",
+            "Other"});
+            this.comboBox3.Location = new System.Drawing.Point(76, 92);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(147, 29);
+            this.comboBox3.TabIndex = 31;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(15, 92);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 25);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Class";
+            // 
+            // Article
+            // 
+            this.Article.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
+            this.Article.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Article.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.Article.FormattingEnabled = true;
+            this.Article.Location = new System.Drawing.Point(364, 50);
+            this.Article.Name = "Article";
+            this.Article.Size = new System.Drawing.Size(147, 29);
+            this.Article.TabIndex = 29;
+            this.Article.SelectedIndexChanged += new System.EventHandler(this.Article_SelectedIndexChanged);
+            // 
+            // Article_index
+            // 
+            this.Article_index.AutoSize = true;
+            this.Article_index.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Article_index.ForeColor = System.Drawing.Color.White;
+            this.Article_index.Location = new System.Drawing.Point(291, 54);
+            this.Article_index.Name = "Article_index";
+            this.Article_index.Size = new System.Drawing.Size(67, 25);
+            this.Article_index.TabIndex = 28;
+            this.Article_index.Text = "Article";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox2.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(111, 54);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(147, 29);
+            this.comboBox2.TabIndex = 27;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(15, 54);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 25);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Site-Area";
+            // 
+            // Type
+            // 
+            this.Type.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
+            this.Type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Type.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.Type.FormattingEnabled = true;
+            this.Type.Items.AddRange(new object[] {
+            "SCP",
+            "Tale/other"});
+            this.Type.Location = new System.Drawing.Point(301, 9);
+            this.Type.Name = "Type";
+            this.Type.Size = new System.Drawing.Size(147, 29);
+            this.Type.TabIndex = 25;
+            this.Type.SelectedIndexChanged += new System.EventHandler(this.Type_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(244, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 25);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Type";
+            // 
+            // confwaa
+            // 
+            this.confwaa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.confwaa.BackColor = System.Drawing.Color.Black;
+            this.confwaa.Enabled = false;
+            this.confwaa.FlatAppearance.BorderSize = 0;
+            this.confwaa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confwaa.Font = new System.Drawing.Font("Nirmala UI", 15.75F);
+            this.confwaa.ForeColor = System.Drawing.Color.White;
+            this.confwaa.Location = new System.Drawing.Point(102, 160);
+            this.confwaa.Name = "confwaa";
+            this.confwaa.Size = new System.Drawing.Size(105, 50);
+            this.confwaa.TabIndex = 23;
+            this.confwaa.Text = "Confirm";
+            this.confwaa.UseVisualStyleBackColor = false;
+            this.confwaa.Click += new System.EventHandler(this.confwaa_Click);
+            this.confwaa.MouseEnter += new System.EventHandler(this.confwaa_MouseEnter);
+            this.confwaa.MouseLeave += new System.EventHandler(this.confwaa_MouseLeave);
+            // 
+            // descwaa
+            // 
+            this.descwaa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
+            this.descwaa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.descwaa.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.descwaa.ForeColor = System.Drawing.Color.White;
+            this.descwaa.Location = new System.Drawing.Point(18, 156);
+            this.descwaa.Multiline = true;
+            this.descwaa.Name = "descwaa";
+            this.descwaa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.descwaa.Size = new System.Drawing.Size(147, 20);
+            this.descwaa.TabIndex = 22;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(15, 128);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 25);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Description";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(80, 12);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(147, 22);
+            this.textBox2.TabIndex = 19;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(15, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 25);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Name";
             // 
             // MaA
             // 
@@ -614,12 +846,11 @@ namespace SCP
             // 
             this.confirming.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.confirming.BackColor = System.Drawing.Color.Black;
-            this.confirming.Enabled = false;
             this.confirming.FlatAppearance.BorderSize = 0;
             this.confirming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confirming.Font = new System.Drawing.Font("Nirmala UI", 15.75F);
             this.confirming.ForeColor = System.Drawing.Color.White;
-            this.confirming.Location = new System.Drawing.Point(102, 160);
+            this.confirming.Location = new System.Drawing.Point(168, 92);
             this.confirming.Name = "confirming";
             this.confirming.Size = new System.Drawing.Size(105, 50);
             this.confirming.TabIndex = 23;
@@ -627,238 +858,6 @@ namespace SCP
             this.confirming.UseVisualStyleBackColor = false;
             this.confirming.Visible = false;
             this.confirming.Click += new System.EventHandler(this.confirming_Click);
-            // 
-            // WaA
-            // 
-            this.WaA.Controls.Add(this.comboBox4);
-            this.WaA.Controls.Add(this.label10);
-            this.WaA.Controls.Add(this.textBox1);
-            this.WaA.Controls.Add(this.comboBox3);
-            this.WaA.Controls.Add(this.label9);
-            this.WaA.Controls.Add(this.Article);
-            this.WaA.Controls.Add(this.Article_index);
-            this.WaA.Controls.Add(this.comboBox2);
-            this.WaA.Controls.Add(this.label8);
-            this.WaA.Controls.Add(this.Type);
-            this.WaA.Controls.Add(this.label7);
-            this.WaA.Controls.Add(this.confwaa);
-            this.WaA.Controls.Add(this.descwaa);
-            this.WaA.Controls.Add(this.label5);
-            this.WaA.Controls.Add(this.textBox2);
-            this.WaA.Controls.Add(this.label6);
-            this.WaA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WaA.Location = new System.Drawing.Point(0, 265);
-            this.WaA.Name = "WaA";
-            this.WaA.Size = new System.Drawing.Size(565, 483);
-            this.WaA.TabIndex = 24;
-            this.WaA.Visible = false;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
-            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox4.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "05"});
-            this.comboBox4.Location = new System.Drawing.Point(424, 92);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(147, 29);
-            this.comboBox4.TabIndex = 34;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(382, 92);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 25);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "LVL";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(229, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 22);
-            this.textBox1.TabIndex = 32;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox3.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Safe",
-            "Euclid",
-            "Keter",
-            "Appolyon",
-            "Thaumiel",
-            "Other"});
-            this.comboBox3.Location = new System.Drawing.Point(76, 92);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(147, 29);
-            this.comboBox3.TabIndex = 31;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(15, 92);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 25);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Class";
-            // 
-            // Article
-            // 
-            this.Article.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
-            this.Article.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Article.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.Article.FormattingEnabled = true;
-            this.Article.Location = new System.Drawing.Point(364, 50);
-            this.Article.Name = "Article";
-            this.Article.Size = new System.Drawing.Size(147, 29);
-            this.Article.TabIndex = 29;
-            this.Article.SelectedIndexChanged += new System.EventHandler(this.Article_SelectedIndexChanged);
-            // 
-            // Article_index
-            // 
-            this.Article_index.AutoSize = true;
-            this.Article_index.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Article_index.ForeColor = System.Drawing.Color.White;
-            this.Article_index.Location = new System.Drawing.Point(291, 54);
-            this.Article_index.Name = "Article_index";
-            this.Article_index.Size = new System.Drawing.Size(67, 25);
-            this.Article_index.TabIndex = 28;
-            this.Article_index.Text = "Article";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(111, 54);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(147, 29);
-            this.comboBox2.TabIndex = 27;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(15, 54);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 25);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Site-Area";
-            // 
-            // Type
-            // 
-            this.Type.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
-            this.Type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Type.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.Type.FormattingEnabled = true;
-            this.Type.Items.AddRange(new object[] {
-            "SCP",
-            "Tale/other"});
-            this.Type.Location = new System.Drawing.Point(301, 9);
-            this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(147, 29);
-            this.Type.TabIndex = 25;
-            this.Type.SelectedIndexChanged += new System.EventHandler(this.Type_SelectedIndexChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(244, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 25);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Type";
-            // 
-            // confwaa
-            // 
-            this.confwaa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.confwaa.BackColor = System.Drawing.Color.Black;
-            this.confwaa.Enabled = false;
-            this.confwaa.FlatAppearance.BorderSize = 0;
-            this.confwaa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.confwaa.Font = new System.Drawing.Font("Nirmala UI", 15.75F);
-            this.confwaa.ForeColor = System.Drawing.Color.White;
-            this.confwaa.Location = new System.Drawing.Point(102, 160);
-            this.confwaa.Name = "confwaa";
-            this.confwaa.Size = new System.Drawing.Size(105, 50);
-            this.confwaa.TabIndex = 23;
-            this.confwaa.Text = "Confirm";
-            this.confwaa.UseVisualStyleBackColor = false;
-            this.confwaa.Click += new System.EventHandler(this.confwaa_Click);
-            this.confwaa.MouseEnter += new System.EventHandler(this.confwaa_MouseEnter);
-            this.confwaa.MouseLeave += new System.EventHandler(this.confwaa_MouseLeave);
-            // 
-            // descwaa
-            // 
-            this.descwaa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
-            this.descwaa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.descwaa.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.descwaa.ForeColor = System.Drawing.Color.White;
-            this.descwaa.Location = new System.Drawing.Point(18, 156);
-            this.descwaa.Multiline = true;
-            this.descwaa.Name = "descwaa";
-            this.descwaa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descwaa.Size = new System.Drawing.Size(147, 20);
-            this.descwaa.TabIndex = 22;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(15, 128);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 25);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Description";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(80, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(147, 22);
-            this.textBox2.TabIndex = 19;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(15, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 25);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Name";
             // 
             // Profile
             // 
@@ -1457,10 +1456,10 @@ namespace SCP
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.profilepic)).EndInit();
             this.panelmenu.ResumeLayout(false);
-            this.MaA.ResumeLayout(false);
-            this.MaA.PerformLayout();
             this.WaA.ResumeLayout(false);
             this.WaA.PerformLayout();
+            this.MaA.ResumeLayout(false);
+            this.MaA.PerformLayout();
             this.Profile.ResumeLayout(false);
             this.Profile.PerformLayout();
             this.GoIpanel.ResumeLayout(false);

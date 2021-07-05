@@ -637,7 +637,6 @@ namespace SCP
             loadingopener();
 
             MaA.Visible = true;
-            confirming.Location = new Point(MaA.Size.Width - confirming.Size.Width - 10, MaA.Size.Height - confirming.Size.Height - 15);
             desc.Size = new Size(MaA.Size.Width - 30, MaA.Size.Height / 2);
 
             typed.Text = "";
@@ -655,8 +654,10 @@ namespace SCP
             Articling.Visible = true;
             label11.Visible = true;
             typed.Visible = true;
-            comboBox5.Location = new Point(confirming.Location.X - confirming.Size.Width - 30, confirming.Location.Y);
-            label12.Location = new Point(comboBox5.Location.X - comboBox5.Size.Width - 15, comboBox5.Location.Y);
+            confirming.Visible = true;
+            confirming.Location = new Point(MaA.Size.Width - confirming.Size.Width - 30, MaA.Size.Height - confirming.Size.Height - 15);
+            comboBox5.Location = new Point(confirming.Location.X - comboBox5.Size.Width - 15, confirming.Location.Y);
+            label12.Location = new Point(comboBox5.Location.X - label12.Size.Width - 5, comboBox5.Location.Y);
             DataTable dt = new DataTable();
             Articling.Items.Clear();
             if (comboBox7.Text == "SCP")
@@ -712,7 +713,7 @@ namespace SCP
             if (typing == true)
                 imp.changing_ArticleDB(Articling.Text, typed.Text, SA.Text, desc.Text, Classy.Text, Leveling.Text, Articling.Text, comboBox5.Text);
             else
-                imp.creating_ArticleDB(Articling.Text, "", "", desc.Text, "", "");
+                imp.changing_ArticleDB(Articling.Text, "", "", desc.Text, "", comboBox5.Text);
 
             confirming.BackColor = Color.Black;
             confirming.ForeColor = Color.White;
