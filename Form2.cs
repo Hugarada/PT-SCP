@@ -668,14 +668,20 @@ namespace SCP
             comboBox5.Visible = true;
             comboBox5.Enabled = true;
             label12.Visible = true;
-            label12.Enabled = true;
+            label18.Visible = true;
+            Articling.Visible = true;
             comboBox5.Location = new Point(confirming.Location.X - confirming.Size.Width - 30, confirming.Location.Y);
             label12.Location = new Point(comboBox5.Location.X - comboBox5.Size.Width - 15, comboBox5.Location.Y);
-            if(comboBox7.Text == "SCP")
+            DataTable dt = new DataTable();
+            dt = BLL.Article.Load();
+            Articling.Items.Clear();
+            if (comboBox7.Text == "SCP")
             {
                 Managementplacement(true);
                 Description.Location = new Point(Description.Location.X, label17.Location.Y + 30);
                 desc.Location = new Point(desc.Location.X, Description.Location.Y + Description.Size.Height + 15);
+                for (int i = 0; dt.Rows.Count < i; i++)
+                    Articling.Items.Insert(i, dt.Rows[i]["Name"].ToString());
             }
             else
             {
@@ -703,6 +709,29 @@ namespace SCP
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
             confirming.Enabled = true;
+        }
+
+        private void confirming_MouseEnter(object sender, EventArgs e)
+        {
+            confirming.BackColor = Color.FromArgb(5, 103, 241);
+            confirming.ForeColor = Color.White;
+        }
+
+        private void confirming_MouseLeave(object sender, EventArgs e)
+        {
+            confirming.BackColor = Color.Black;
+            confirming.ForeColor = Color.White;
+        }
+
+        private void confirming_Click(object sender, EventArgs e)
+        {
+            confirming.BackColor = Color.White;
+            confirming.ForeColor = Color.Black;
+            this.Refresh();
+
+            loadingopener();
+
+            impclass imp = new impclass();
         }
     }
 }

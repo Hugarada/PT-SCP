@@ -121,6 +121,8 @@ namespace SCP
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Articling = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilepic)).BeginInit();
@@ -362,6 +364,8 @@ namespace SCP
             // 
             // MaA
             // 
+            this.MaA.Controls.Add(this.Articling);
+            this.MaA.Controls.Add(this.label18);
             this.MaA.Controls.Add(this.comboBox5);
             this.MaA.Controls.Add(this.label12);
             this.MaA.Controls.Add(this.desc);
@@ -395,7 +399,7 @@ namespace SCP
             this.comboBox5.Items.AddRange(new object[] {
             "Approved",
             "Denied"});
-            this.comboBox5.Location = new System.Drawing.Point(245, 227);
+            this.comboBox5.Location = new System.Drawing.Point(266, 231);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(147, 29);
             this.comboBox5.TabIndex = 43;
@@ -564,7 +568,7 @@ namespace SCP
             this.comboBox7.Items.AddRange(new object[] {
             "SCP",
             "Tale"});
-            this.comboBox7.Location = new System.Drawing.Point(88, 5);
+            this.comboBox7.Location = new System.Drawing.Point(126, 3);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(147, 29);
             this.comboBox7.TabIndex = 29;
@@ -577,9 +581,9 @@ namespace SCP
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(15, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 25);
+            this.label13.Size = new System.Drawing.Size(111, 25);
             this.label13.TabIndex = 28;
-            this.label13.Text = "Article";
+            this.label13.Text = "Article Type";
             // 
             // confirming
             // 
@@ -597,6 +601,9 @@ namespace SCP
             this.confirming.Text = "Confirm";
             this.confirming.UseVisualStyleBackColor = false;
             this.confirming.Visible = false;
+            this.confirming.Click += new System.EventHandler(this.confirming_Click);
+            this.confirming.MouseEnter += new System.EventHandler(this.confirming_MouseEnter);
+            this.confirming.MouseLeave += new System.EventHandler(this.confirming_MouseLeave);
             // 
             // WaA
             // 
@@ -1408,6 +1415,30 @@ namespace SCP
             this.label1.Text = "Placeholder";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Articling
+            // 
+            this.Articling.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(103)))), ((int)(((byte)(241)))));
+            this.Articling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Articling.Font = new System.Drawing.Font("Nirmala UI", 12F);
+            this.Articling.FormattingEnabled = true;
+            this.Articling.Location = new System.Drawing.Point(364, 9);
+            this.Articling.Name = "Articling";
+            this.Articling.Size = new System.Drawing.Size(147, 29);
+            this.Articling.TabIndex = 45;
+            this.Articling.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(291, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(67, 25);
+            this.label18.TabIndex = 44;
+            this.label18.Text = "Article";
+            this.label18.Visible = false;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1534,5 +1565,7 @@ namespace SCP
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox Articling;
+        private System.Windows.Forms.Label label18;
     }
 }

@@ -273,6 +273,12 @@ namespace BusinessLogicLayer
                 }
                 return obj;
             }
+
+            static public DataTable only_SCPs()
+            {
+                DAL dal = new DAL();
+                return dal.executarReader("SELECT * FROM Articles WHERE ");
+            }
         }
 
         public class website
