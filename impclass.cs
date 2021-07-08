@@ -20,7 +20,7 @@ namespace SCP
     {
         public static string username, email;
         public static bool admin;
-        public static int act;
+        public static int act, level;
         private bool gotted = false;
 
 
@@ -177,6 +177,8 @@ namespace SCP
                     {
                         admin = true;
                     }
+                    else
+                        level = Convert.ToInt16(dt.Rows[0]["Roll"].ToString());
                     act = 4;
                     Menu mu = new Menu();
                     mu.Show();

@@ -181,22 +181,51 @@ namespace SCP
             this.Refresh();
 
             Article_list.Visible = true;
-            DataTable dt = new DataTable();
-            dt = BLL.Article.only_SCPs();
-            LinkLabel[] artic = new LinkLabel[dt.Rows.Count]; 
-            for (int i = 0; i < dt.Rows.Count; i++)
+            try
             {
-                artic[i] = new LinkLabel();
-                artic[i].Font = new Font("Nirmala UI", 12F, FontStyle.Regular);
-                if (i == 0)
-                    artic[i].Location = new Point(Article_list.Location.X + 15, SCPs_loc.Location.Y + 15);
-                else
-                    artic[i].Location = new Point(artic[i - 1].Location.X, artic[i - 1].Location.Y + 10);
-                artic[i].Text = dt.Rows[i]["Name"].ToString();
-            }
+                DataTable dt = new DataTable();
+                dt = BLL.Article.only_SCPs();
+                LinkLabel[] artic = new LinkLabel[dt.Rows.Count];
 
-            dt = BLL.Article.only_tales();
-            LinkLabel[] taled = new LinkLabel[dt.Rows.Count];
+                if (impclass.admin == true)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        artic[i] = new LinkLabel();
+                        artic[i].Font = new Font("Nirmala UI", 12F, FontStyle.Regular);
+                        if (i == 0)
+                            artic[i].Location = new Point(Article_list.Location.X + 15, SCPs_loc.Location.Y + 15);
+                        else
+                            artic[i].Location = new Point(artic[i - 1].Location.X, artic[i - 1].Location.Y + 10);
+                        artic[i].Text = dt.Rows[i]["Name"].ToString();
+                    }
+                }
+                else
+                {
+                    int formerwork = 0;
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        if (Convert.ToInt16(dt.Rows[i]["LVL"].ToString()) == impclass.level)
+                        {
+                            artic[formerwork] = new LinkLabel();
+                            artic[formerwork].Font = new Font("Nirmala UI", 12F, FontStyle.Regular);
+                            if (formerwork == 0)
+                                artic[formerwork].Location = new Point(Article_list.Location.X + 15, SCPs_loc.Location.Y + 15);
+                            else
+                                artic[formerwork].Location = new Point(artic[formerwork - 1].Location.X, artic[i - 1].Location.Y + 10);
+                            artic[formerwork].Text = dt.Rows[formerwork]["Name"].ToString();
+                            formerwork += 1;
+                        }
+                    }
+                }
+                dt = BLL.Article.only_tales();
+                LinkLabel[] taled = new LinkLabel[dt.Rows.Count];
+            }
+            catch (Exception ee)
+            {
+                impclass imp = new impclass();
+                imp.getError(ee);
+            }
 
             button2.BackColor = Color.Black;
             button2.ForeColor = Color.White;
