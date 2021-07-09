@@ -165,10 +165,11 @@ namespace SCP
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            panelcleanner();
             button1.BackColor = Color.White;
             button1.ForeColor = Color.Black;
             this.Refresh();
+            panelcleanner();
+            panelmenu.Visible = false;
             button1.BackColor = Color.Black;
             button1.ForeColor = Color.White;
         }

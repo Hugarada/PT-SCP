@@ -44,6 +44,9 @@ namespace SCP
             this.profilepic = new System.Windows.Forms.PictureBox();
             this.Usernamecont = new System.Windows.Forms.Label();
             this.panelmenu = new System.Windows.Forms.Panel();
+            this.Article_list = new System.Windows.Forms.Panel();
+            this.Tales = new System.Windows.Forms.Label();
+            this.SCPs_loc = new System.Windows.Forms.Label();
             this.MaA = new System.Windows.Forms.Panel();
             this.desc = new System.Windows.Forms.TextBox();
             this.Articling = new System.Windows.Forms.ComboBox();
@@ -123,20 +126,17 @@ namespace SCP
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Article_list = new System.Windows.Forms.Panel();
-            this.SCPs_loc = new System.Windows.Forms.Label();
-            this.Tales = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilepic)).BeginInit();
             this.panelmenu.SuspendLayout();
+            this.Article_list.SuspendLayout();
             this.MaA.SuspendLayout();
             this.WaA.SuspendLayout();
             this.Profile.SuspendLayout();
             this.GoIpanel.SuspendLayout();
             this.Manage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.Article_list.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -367,9 +367,9 @@ namespace SCP
             // 
             // panelmenu
             // 
+            this.panelmenu.Controls.Add(this.WaA);
             this.panelmenu.Controls.Add(this.Article_list);
             this.panelmenu.Controls.Add(this.MaA);
-            this.panelmenu.Controls.Add(this.WaA);
             this.panelmenu.Controls.Add(this.Profile);
             this.panelmenu.Controls.Add(this.GoIpanel);
             this.panelmenu.Controls.Add(this.Manage);
@@ -380,6 +380,44 @@ namespace SCP
             this.panelmenu.Name = "panelmenu";
             this.panelmenu.Size = new System.Drawing.Size(754, 921);
             this.panelmenu.TabIndex = 0;
+            // 
+            // Article_list
+            // 
+            this.Article_list.Controls.Add(this.Tales);
+            this.Article_list.Controls.Add(this.SCPs_loc);
+            this.Article_list.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Article_list.Location = new System.Drawing.Point(0, 326);
+            this.Article_list.Margin = new System.Windows.Forms.Padding(4);
+            this.Article_list.Name = "Article_list";
+            this.Article_list.Size = new System.Drawing.Size(754, 595);
+            this.Article_list.TabIndex = 47;
+            this.Article_list.Visible = false;
+            // 
+            // Tales
+            // 
+            this.Tales.AutoSize = true;
+            this.Tales.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tales.ForeColor = System.Drawing.Color.White;
+            this.Tales.Location = new System.Drawing.Point(434, 25);
+            this.Tales.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Tales.Name = "Tales";
+            this.Tales.Size = new System.Drawing.Size(183, 41);
+            this.Tales.TabIndex = 2;
+            this.Tales.Text = "Tales/Others";
+            this.Tales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SCPs_loc
+            // 
+            this.SCPs_loc.AutoSize = true;
+            this.SCPs_loc.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SCPs_loc.ForeColor = System.Drawing.Color.White;
+            this.SCPs_loc.Location = new System.Drawing.Point(94, 25);
+            this.SCPs_loc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SCPs_loc.Name = "SCPs_loc";
+            this.SCPs_loc.Size = new System.Drawing.Size(83, 41);
+            this.SCPs_loc.TabIndex = 1;
+            this.SCPs_loc.Text = "SCPs";
+            this.SCPs_loc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MaA
             // 
@@ -1538,44 +1576,6 @@ namespace SCP
             this.label1.Text = "Placeholder";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Article_list
-            // 
-            this.Article_list.Controls.Add(this.Tales);
-            this.Article_list.Controls.Add(this.SCPs_loc);
-            this.Article_list.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Article_list.Location = new System.Drawing.Point(0, 326);
-            this.Article_list.Margin = new System.Windows.Forms.Padding(4);
-            this.Article_list.Name = "Article_list";
-            this.Article_list.Size = new System.Drawing.Size(754, 595);
-            this.Article_list.TabIndex = 47;
-            this.Article_list.Visible = false;
-            // 
-            // SCPs_loc
-            // 
-            this.SCPs_loc.AutoSize = true;
-            this.SCPs_loc.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SCPs_loc.ForeColor = System.Drawing.Color.White;
-            this.SCPs_loc.Location = new System.Drawing.Point(94, 25);
-            this.SCPs_loc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.SCPs_loc.Name = "SCPs_loc";
-            this.SCPs_loc.Size = new System.Drawing.Size(83, 41);
-            this.SCPs_loc.TabIndex = 1;
-            this.SCPs_loc.Text = "SCPs";
-            this.SCPs_loc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Tales
-            // 
-            this.Tales.AutoSize = true;
-            this.Tales.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tales.ForeColor = System.Drawing.Color.White;
-            this.Tales.Location = new System.Drawing.Point(434, 25);
-            this.Tales.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Tales.Name = "Tales";
-            this.Tales.Size = new System.Drawing.Size(183, 41);
-            this.Tales.TabIndex = 2;
-            this.Tales.Text = "Tales/Others";
-            this.Tales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1595,6 +1595,8 @@ namespace SCP
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.profilepic)).EndInit();
             this.panelmenu.ResumeLayout(false);
+            this.Article_list.ResumeLayout(false);
+            this.Article_list.PerformLayout();
             this.MaA.ResumeLayout(false);
             this.MaA.PerformLayout();
             this.WaA.ResumeLayout(false);
@@ -1606,8 +1608,6 @@ namespace SCP
             this.Manage.ResumeLayout(false);
             this.Manage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.Article_list.ResumeLayout(false);
-            this.Article_list.PerformLayout();
             this.ResumeLayout(false);
 
         }

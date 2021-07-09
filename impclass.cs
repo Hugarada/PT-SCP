@@ -137,6 +137,7 @@ namespace SCP
                     if (dt.Rows[i]["Name"].ToString() == Name)
                     {
                         gotted = true;
+                        break;
                     }
                 }
 
@@ -177,8 +178,6 @@ namespace SCP
                     {
                         admin = true;
                     }
-                    else
-                        level = Convert.ToInt16(dt.Rows[0]["Roll"].ToString());
                     act = 4;
                     Menu mu = new Menu();
                     mu.Show();
@@ -186,6 +185,7 @@ namespace SCP
                     ln.Hide();
                     act = 5;
                     email = emailed;
+                    level = Convert.ToInt32(dt.Rows[0]["Level"].ToString());
                 }
                 else
                 {
